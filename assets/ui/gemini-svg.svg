@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Small Background Mountain Peak -->
+  <polygon points="65,40 88,80 42,80" fill="#2c5270"/>
+  <polygon points="65,40 73,54 65,58 57,54" fill="#f0f9ff"/>
+  <polygon points="65,40 88,80 65,80" fill="#1e3a50"/>
+  
+  <!-- Main Foreground Mountain Peak -->
+  <polygon points="48,22 80,82 16,82" fill="#38bdf8"/>
+  <polygon points="48,22 80,82 48,82" fill="#0284c7"/>
+  
+  <!-- Main Mountain Snow Cap -->
+  <polygon points="48,22 58,41 48,46 38,41" fill="#ffffff"/>
+  <polygon points="48,22 58,41 48,46" fill="#e0f2fe"/>
+  
+  <!-- Base Clouds -->
+  <path d="M 10 82 
+           A 12 12 0 0 1 28 72 
+           A 14 14 0 0 1 50 68 
+           A 14 14 0 0 1 72 72 
+           A 12 12 0 0 1 90 82 
+           Z" fill="#ffffff" opacity="0.95"/>
+  <path d="M 20 84 
+           A 10 10 0 0 1 36 76 
+           A 12 12 0 0 1 56 74 
+           A 10 10 0 0 1 76 80 
+           A 10 10 0 0 1 85 84 
+           Z" fill="#bae6fd" opacity="0.6"/>
+</svg>

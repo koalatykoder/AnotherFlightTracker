@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.pyc
+location_cache.json
+.aider*

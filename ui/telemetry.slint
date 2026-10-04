@@ -1,0 +1,51 @@
+export struct FlightData {
+    callsign: string,
+    airline_name: string,
+    aircraft_type: string,
+    origin_code: string,
+    origin_city: string,
+    dest_code: string,
+    dest_city: string,
+    altitude: string,
+    speed: string,
+    progress_percent: float,
+    distance_miles: float,
+    elevation_angle: float,
+    heading: float,
+    heading_text: string,
+    icao24: string,
+    airline_logo: image,
+    temperature_text: string,
+}
+
+export global Telemetry {
+    in-out property <bool> has_active_flight: false;
+    in-out property <FlightData> active_flight: {
+        callsign: "",
+        airline_name: "",
+        aircraft_type: "",
+        origin_code: "",
+        origin_city: "",
+        dest_code: "",
+        dest_city: "",
+        altitude: "",
+        speed: "",
+        progress_percent: 0.0,
+        distance_miles: 0.0,
+        elevation_angle: 0.0,
+        heading: 0.0,
+        heading_text: "",
+        icao24: "",
+        temperature_text: "",
+    };
+    
+    out property <length> route_line_width: active_flight.progress_percent * 180px;
+}
+
+export global WifiSettings {
+    in-out property <string> wifi_ssid: "Home_WiFi";
+    in-out property <string> wifi_password: "";
+    in-out property <bool> is_open: false;
+    in-out property <string> status_text: "Connected";
+    callback wifi_updated(string, string);
+}

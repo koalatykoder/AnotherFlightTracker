@@ -1,0 +1,3 @@
+slint>=1.8.0
+requests>=2.31.0
+debugpy>=1.8.0

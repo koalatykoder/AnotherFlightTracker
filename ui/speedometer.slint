@@ -1,0 +1,47 @@
+export component SpeedometerGauge inherits Rectangle {
+    width: 48px;
+    height: 48px;
+    
+    // speed_percent ranges from 0.0 to 1.0
+    in property <float> speed_percent: 0.0;
+
+    // Background Gauge Arc (Track)
+    Path {
+        width: 100%;
+        height: 100%;
+        stroke: #1e293b;
+        stroke-width: 4px;
+        commands: "M 10 38 A 18 18 0 1 1 38 38";
+    }
+
+    // Active Speed Gauge Arc
+    Path {
+        width: 100%;
+        height: 100%;
+        stroke: #38bdf8;
+        stroke-width: 4px;
+        commands: "M 10 38 A 18 18 0 0 1 24 6";
+    }
+
+    // Center Pivot Point
+    Rectangle {
+        x: (parent.width - 6px) / 2;
+        y: 21px;
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        background: #f8fafc;
+    }
+
+    // Rotating Speedometer Needle using Path Commands
+    Path {
+        width: 100%;
+        height: 100%;
+        stroke: #facc15;
+        stroke-width: 2px;
+        
+        // Maps 0.0 -> 1.0 percentage to needle endpoint coordinates across the gauge arc
+        // Default position points toward the center-top
+        commands: "M 24 24 L " + (24 - 14 * cos(180deg * root.speed_percent)) + " " + (24 - 14 * sin(180deg * root.speed_percent));
+    }
+}
